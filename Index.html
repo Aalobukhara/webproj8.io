@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Analog Clock</title>
+</head>
+<body>
+
+    <canvas id="cloud_demo_canvas" width="500" height="500"></canvas>
+
+<div class="window">
+</div>
+
+<div class="clock">
+    <div class="hour">
+        <div class="hr" id="hr"></div>
+    </div>
+    <div class="min" id="min">
+        <div class="mn" id="mn"></div>
+    </div>
+    <div class="sec" id="sec">
+        <div class="sc" id="sc"></div>
+    </div>
+</div>
+
+
+    <div class="plant">
+    </div>
+
+
+
+
+<script>
+
+var canvas;
+var ctx;
+
+var background;
+var width = 300;
+var height = 200;
+
+var cloud;
+var cloud_x;
+
+function init() {
+	canvas = document.getElementById("cloud_demo_canvas");
+	width = canvas.width;
+	height = canvas.height;
+	ctx = canvas.getContext("2d");
+	
+	// init background 
+	background = new Image();
+	// background.src = 'http://silveiraneto.net/wp-content/uploads/2011/06/forest.png';
+	background.src = 'https://st2.depositphotos.com/5991120/8867/v/450/depositphotos_88677448-stock-illustration-beautiful-green-mountains-summer-landscape.jpg';
+	
+	// init cloud
+	cloud = new Image();
+	cloud.src = 'http://silveiraneto.net/wp-content/uploads/2011/06/cloud.png';
+	cloud.onload = function(){
+		cloud_x = -cloud.width;
+	};
+	
+	return setInterval(main_loop, 10);
+}
+
+function update(){
+	cloud_x += 0.3;
+	if (cloud_x > width ) {
+		cloud_x = -cloud.width;
+	}
+}
+
+function draw() {
+	ctx.drawImage(background,0,0);
+	ctx.drawImage(cloud, cloud_x, 0);
+}
+
+function main_loop() {
+	draw();
+	update();
+}
+
+init();
+
+</script>
+
+<script src="main.js"></script>
+</body>
+</html>

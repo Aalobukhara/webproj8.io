@@ -1,0 +1,183 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    background: linear-gradient(0deg, #01293b 0%, rgb(65, 59, 46) 100%);
+    /* justify-content: center; */
+    align-items: center;
+    backdrop-filter:brightness(50%);
+    min-height: 100vh;
+    /* background: url(darkwall.jfif); */
+    /* background: rgb(173, 134, 61); */
+    background-color: #01293b;
+    /* background:url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.p30Kf646eipm0oaQm9nXqgHaEK%26pid%3DApi&f=1); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.plant{
+    background-color:transparent;
+    background-image: url(green-flower-pot-png-free-clipart-8.png);
+    background-size: cover;
+
+    height: 437px;
+    width: 500px;
+    top: 42%;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    }
+
+.window{
+
+    background-image: url(Window-PNG-Image-60518.png);
+    backdrop-filter: blur(3px) brightness(60%);
+    background-repeat: no-repeat;
+    background-size:850px 600px;
+    height: 600px;
+    width: 850px;
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    z-index: 1;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.1),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    transition-duration: 0.5s;
+
+}
+
+
+.window:hover{
+    backdrop-filter: blur(0) brightness(80%);
+}
+
+
+#cloud_demo_canvas{
+    height: 650px;
+    width: 830px;
+    position:absolute;
+    left: 35px;
+    top: 16%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.clock{
+
+    top: 8%;
+    right:5%;
+    position: absolute;
+    width: 262.5px;
+    height: 262.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clockbg.png);
+    background-size: contain;
+    background-color: #5393b1;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+                inset 0 -15px 15px rgba(255, 255, 255, 0.1),
+                0 15px 15px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+                transition-duration: 0.5s;
+
+}
+
+
+.clock:hover{
+    content: ' ';
+    position: absolute;
+    /* width: 15px;
+    height: 15px; */
+    background-color: #5288a1c9;
+    border-radius: 50%;
+    z-index:1000;
+}
+
+
+.clock .hour,
+.clock .min,
+.clock .sec{
+    position: absolute;
+}
+
+.clock .hour, .hr{
+    width: 120px;
+    height: 120px;
+}
+
+.clock .min, .mn{
+    width: 142.5px;
+    height: 142.5px;
+}
+
+.clock .sec, .sc{
+    width: 172.5px;
+    height: 172.5px;
+}
+
+
+.hr,.mn,.sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before{
+    content: ' ';
+    position: absolute;
+    width: 8px;
+    height: 60px;
+    background: #ff105e;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+
+.mn:before{
+    content: ' ';
+    position: absolute;
+    width: 4px;
+    height: 67.5px;
+    background: #fff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before{
+    content: ' ';
+    position: absolute;
+    width: 2px;
+    height: 112.5px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+
+@media screen and (max-width: 1315px) {
+    body {
+      background-color: olive;
+    }
+    .clock{
+        margin-top: 50px;
+        top: 90%;
+        position: absolute;
+        bottom: 0;
+
+    }
+    .plant{
+        display: none;
+    }
+  }
